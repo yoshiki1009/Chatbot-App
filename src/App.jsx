@@ -63,7 +63,6 @@ const App = () => {
     setOpen(false);
   }, [setOpen]);
 
-  //  最初のレンダーの直後にこれが実行される＝＞　AnswersListのanswersは[]からdatasetの中身に変わり再度レンダーが行われanswerが描画される
   useEffect(() => {
     (async () => {
       const initDataset = {};
