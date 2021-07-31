@@ -3,6 +3,7 @@ import './assets/styles/style.css';
 import { AnswersList, Chats } from './components/index';
 import FormDialog from './components/Forms/FormDialog';
 import { db } from './firebase/index';
+import defaultDataset from './dataset'; //for test display
 
 const App = () => {
   const [answers, setAnswers] = useState([]);
@@ -78,8 +79,10 @@ const App = () => {
           });
         });
 
-      setDataset(initDataset);
-      displayNextQuestion(currentId, initDataset[currentId]);
+      // setDataset(initDataset); set dataset using data fetched from firebase
+      setDataset(defaultDataset); //for test display
+      // displayNextQuestion(currentId, initDataset[currentId]);
+      displayNextQuestion(currentId, defaultDataset[currentId]); //for test display
     })();
   }, []);
 
